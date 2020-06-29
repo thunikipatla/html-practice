@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                text-align: center;
+                color: coral;
+            }
+            h2 {
+                color: crimson;
+            }
+            select {
+                width: 10%;
+            }
+            
+        </style>
+        <h1>Please provide the following Information to contact us</h1>
+    </head>
+    <body>
+        <form>
+            <h2>Personal Information </h2>
+            <label for="First Name">First Name</label><br><br>
+            <input type="text"><br><br>
+            <label for="Last Name">last Name</label><br><br>
+            <input type="text"><br><br>
+            <label for="Email Address">Email Address</label><br><br>
+            <input type="email"><br><br> 
+            <label for="Geder">Gender</label><br><br>
+            <input type="radio" name="Gender" value="male">male<br>
+            <input type="radio" name="Gender" value="Female">Female<br>
+            <input type="radio" name="Gender" value="Others">Others<br><br>
+            <label for="Date of Birth">Date of Birth</label><br><br>
+            <input type="date"><br><br>
+            <label for="Primary contact number">Primary contact number </label><br><br>
+            <input type="text"><br><br>
+            <label for="state">state</label><br><br>
+            <input list="states"><br><br>
+            <datalist id="states">
+                <option value="Telangana"></option>
+                <option value="Andrapradesh"></option>
+                <option value="karnataka"></option>
+            </datalist>
+            <label for="zip code">zip code</label><br><br>
+            <input type="text"><br><br>
+            <input type="checkbox">
+            <label for="I Accept Terms and conditions">I Accept Terms and conditions*</label>
+
+        </form>
+        <button>submit</button>
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+    <head>
+
+
+
+    </head>
+
+    <body>
+        <ol>
+            <li>What does HTML stand for?</li> <br>
+            <input type="radio" name="question1" value="Hyper Text markup language">Hyper Text markup language<br>
+            <input type="radio" name="question1" value="Hyperlink and text markup language"> Hyperlink and text markup language<br>
+            <input type="radio" name="question1" value="Home Tool Markup language"> Home Tool Markup language<br>
+
+            <br><br>
+
+            <li id="q2">Who is making the Web standards?</li> <br>
+            <input type="radio" name="question2" value="Microsoft"> Microsoft <br>
+            <input type="radio" name="question2" value="Google"> Google<br>
+            <input type="radio" name="question2" value="The world wide web consoritum"> The world wide web consoritum<br>
+            <input type="radio" name="question2" value="Mozilla"> Mozilla<br>
+
+            <br><br>
+
+            <li>Choose the correct HTML element for the largest heading:</li> <br>
+            <input type="radio" name="question3" value="h1"> h1<br>
+            <input type="radio" name="question3" value="Heading"> Heading<br>
+            <input type="radio" name="question3" value="head"> head<br>
+            <input type="radio" name="question3" value="h6"> h6<br>
+
+            <br><br>
+
+            <li>Choose the correct HTML element to define emphasized text</li> <br>
+            <input type="radio" name="question4" value="i"> i<br>
+            <input type="radio" name="question4" value="em"> em<br>
+            <input type="radio" name="question4" value="italic"> italic<br>
+
+        </ol>
+        <br><br>
+
+        <button onclick="getvalues()">Submit</button> <br><br>
+        <hr>
+
+        <!-- <ul id="result" style="color: red;"> 
+
+        </ul> -->
+
+        <h2 id="result" style="color: red;"></h2>
+    </body>
+
+    <script>
+        useranswers=[];
+        var correctanswers = 0; 
+        var wronganswers = 0; 
+
+        // localStorage.setItem('useranswers', JSON.stringify(useranswers));
+
+
+
+        function getvalues(){
+            event.preventDefault();
+            console.log('Hello world')
+            
+            var q1value = document.querySelector('input[name="question1"]:checked').value;
+            var q2value = document.querySelector('input[name="question2"]:checked').value;
+            var q3value = document.querySelector('input[name="question3"]:checked').value;
+            var q4value = document.querySelector('input[name="question4"]:checked').value;
+
+            
+
+            useranswers = {
+                'q1value': q1value,
+                'q2value': q2value,
+                'q3value': q3value,
+                'q4value': q4value
+            }
+
+        //    localStorage.setItem('useranswers', JSON.stringify(useranswers));
+        
+
+        if( useranswers.q1value === "Hyper Text markup language" ){
+            correctanswers++;
+
+        }
+        else {
+            wronganswers++;
+        }
+
+        if( useranswers.q2value === "The world wide web consoritum" ){
+            correctanswers++;
+
+        }
+        else {
+            wronganswers++;
+        } 
+
+        if( useranswers.q3value === "h1" ){
+            correctanswers++;
+
+        }
+        else {
+            wronganswers++;
+        }
+
+        if( useranswers.q4value === "em" ){
+            correctanswers++;
+
+        }
+        else {
+            wronganswers++;
+        }
+        
+        clearform();
+        showresult();
+
+
+        }
+        
+        function clearform(){
+            document.querySelector('input[name="question1"]:checked').checked = false;
+            document.querySelector('input[name="question2"]:checked').checked = false;
+            document.querySelector('input[name="question3"]:checked').checked = false;
+            document.querySelector('input[name="question4"]:checked').checked = false;
+
+
+        }
+
+        function showresult(){
+
+            var resultoutput = document.getElementById('result');
+
+            resultoutput.innerHTML = "<li>"+"<b>"+"You have answered"+"</b>"+"&nbsp;&nbsp"+correctanswers+"&nbsp;&nbsp"+"<b>"+"correct answers And"+"</b>"+"&nbsp;&nbsp"+wronganswers+"&nbsp;&nbsp"+"<b>"+"wrong answers"+"</b>"+"</li>"
+
+        }
+
+    </script>
+
+
+
+
+</html>
